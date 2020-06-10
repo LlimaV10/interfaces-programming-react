@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Route, Switch } from "react-router";
+import Home from "./pages/Home";
+import Authorization from "./pages/Authorization";
+import Header from "./components/Header";
+import Products from "./pages/Products";
+import Product from "./pages/Product";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [loggedUser, setLoggedUser] = useState(localStorage.getItem('loggedUser'));
+
+    useEffect(() => {
+        localStorage.setItem('loggedUser', loggedUser)
+    }, [loggedUser])
+
+    return (
+        <Router>
+            <Switch>
+                {
+                    loggedUser == null || loggedUser === ''
+                        ? <Route path={'/'} component={() => <Authorization setLoggedUser={setLoggedUser} />} />
+                        :
+                        <>
+                            <Header loggedUser={loggedUser} setLoggedUser={setLoggedUser} />
+                            <Route exact path={'/'} component={Home} />
+                            <Route path={'/products/:type_id'} component={Products} />
+                            <Route path={'/product/:id'} component={Product} />
+                        </>
+                }
+
+            </Switch>
+        </Router>
+    )
 }
 
 export default App;

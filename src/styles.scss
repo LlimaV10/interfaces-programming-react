@@ -1,0 +1,17 @@
+@import "scss/Home";
+@import "scss/Authorization";
+@import "scss/Header";
+@import "scss/ProductCard";
+@import "scss/ProductType";
+@import "scss/Products";
+@import "scss/Product";
+
+#root {
+  height: 100%;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

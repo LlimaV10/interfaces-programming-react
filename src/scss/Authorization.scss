@@ -1,0 +1,53 @@
+.authContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+  font-family: monospace;
+
+  .auth {
+    width: 350px;
+    display: flex;
+    background-color: whitesmoke;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    padding: 10px 20px;
+
+    .loginType {
+      font-weight: bold;
+      font-size: 24px;
+      text-align: center;
+    }
+    label {
+      font-size: 24px;
+    }
+    input {
+      font-family: monospace;
+      padding: 5px 10px;
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    button {
+      width: 100px;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background-color: rgba(0, 191, 255, 0.61);
+      border: none;
+      outline: none;
+      border-bottom-right-radius: 15px;
+      border-top-right-radius: 15px;
+      cursor: pointer;
+    }
+    .errorMessage {
+      margin: 15px 5px;
+      padding: 5px 10px;
+      background-color: rgba(205, 92, 92, 0.24);
+      border-radius: 5px;
+    }
+    a {
+      text-align: center;
+    }
+  }
+}

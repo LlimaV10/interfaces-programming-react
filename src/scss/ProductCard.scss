@@ -1,0 +1,39 @@
+.productCard {
+  width: 180px;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  align-items: center;
+  border-radius: 20px;
+  font-family: sans-serif;
+  box-shadow: 0 0 10px #bababa;
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+  .typeName {
+    font-size: 16px;
+    color: darkblue;
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  .title {
+    color: black;
+    font-family: "American Typewriter", sans-serif;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    flex: 2;
+
+    :hover {
+
+    }
+  }
+}
